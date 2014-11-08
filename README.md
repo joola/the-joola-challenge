@@ -3,6 +3,8 @@ The Joola Challenge
 
 <img src="https://joo.la/img/logo-profile.png" alt="joola logo" title="joola" align="right" />
 
+Fork this repo, submit a pull-request answering the chanllenge and **get some swag**.
+
 Here at Joola we developed a cool framework for data analytics, but we want to learn more about how we can make it even better and more accessible for developers, this is why we came up with this challenge. 
 
 We're interested in the different methods and concepts you would use to tackle a very basic challenge, drawing a line-chart.
