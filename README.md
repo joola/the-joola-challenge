@@ -25,3 +25,5 @@ We're interested in the different methods and concepts **you would use** to tack
 - You can use whatever methodolgy, language, database, technique you'd like.
 - You can use whatever charting component/library you wish.
 - Design, usability, look & feel, etc... is not important.
+
+**Don't forget** to star this repo so we could get more developers involved.
