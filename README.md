@@ -7,7 +7,7 @@ Here at Joola we developed a cool framework for data analytics, but we want to l
 
 We're interested in the different methods and concepts you would use to tackle a very basic challenge, drawing a line-chart.
 
-We will send out T-shirts to leading pull-requests and raffle more among all pull-requests submitted.
+**We will send out T-shirts** to leading pull-requests and raffle more among all pull-requests submitted.
 
 **Challenge:** 
 - Create a stand-alone webpage with a single line chart showing a single series of sum of visitors during the last day.
