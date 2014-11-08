@@ -7,6 +7,8 @@ Here at Joola we developed a cool framework for data analytics, but we want to l
 
 We're interested in the different methods and concepts you would use to tackle a very basic challenge, drawing a line-chart.
 
+We will send out T-shirts to leading pull-requests and raffle more among all pull-requests submitted.
+
 **Challenge:** 
 - Create a stand-alone webpage with a single line chart showing a single series of sum of visitors during the last day.
 - The line chart should show hour by hour breakdown (24 last hours) and update in realtime. 
@@ -22,5 +24,3 @@ We're interested in the different methods and concepts you would use to tackle a
 - You can use whatever methodolgy, language, database, technique you'd like.
 - You can use whatever charting component/library you wish.
 - Design, usability, look & feel, etc... is not important.
-
-**We will send out T-Shirts** to leading pull-requests and raffle more among all pull-requests submitted.
