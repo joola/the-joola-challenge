@@ -3,7 +3,9 @@ The Joola Challenge
 
 <img src="https://joo.la/img/logo-profile.png" alt="joola logo" title="joola" align="right" />
 
-Here at Joola we developed a cool framework for data analytics, but we want to learn more about how we can make it better and more accessible for developers. This is why we came up with this challenge, we're looking for different methods and concepts you would use to tackle a very basic challenge, any solution goes (as long as it follows the rules). **We will send out T-Shirts** to leading pull-requests and raffle more among all pull-requests submitted.
+Here at Joola we developed a cool framework for data analytics, but we want to learn more about how we can make it even better and more accessible for developers, this is why we came up with this challenge. 
+
+We're interested in the different methods and concepts you would use to tackle a very basic challenge, drawing a line-chart.
 
 **Challenge:** 
 - Create a stand-alone webpage with a single line chart showing a single series of sum of visitors during the last day.
@@ -21,4 +23,4 @@ Here at Joola we developed a cool framework for data analytics, but we want to l
 - You can use whatever charting component/library you wish.
 - Design, usability, look & feel, etc... is not important.
 
- 
+**We will send out T-Shirts** to leading pull-requests and raffle more among all pull-requests submitted.
