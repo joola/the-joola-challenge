@@ -3,9 +3,9 @@ The Joola Challenge
 
 <img src="https://joo.la/img/logo-profile.png" alt="joola logo" title="joola" align="right" />
 
-Fork this repo, submit a pull-request answering the chanllenge and **get some swag**.
+Fork this repo, submit a pull-request answering the challenge and **get some swag**.
 
-Here at [Joola](https://joo.la) we developed a cool [framework](http://github.com/joola/joola) for data analytics, but we want to learn more about how we can make it even better and more accessible for developers, this is why we came up with this challenge. 
+Here at [Joola](https://joo.la) we developed a cool [framework](http://github.com/joola/joola) for data analytics, but we want to learn more about how we can make it even better and more accessible for developers, this is why we came up with this challenge.
 
 We're interested in the different methods and concepts **you would use** to tackle a very basic challenge, drawing a line-chart.
 
@@ -22,7 +22,7 @@ We're interested in the different methods and concepts **you would use** to tack
 - Official closing data is December 1st 01:00 GMT.
 
 **Rules:**
-- You can use whatever methodolgy, language, database, technique you'd like.
+- You can use whatever methodology, language, database, technique you'd like.
 - You can use whatever charting component/library you wish.
 - Design, usability, look & feel, etc... is not important.
 
