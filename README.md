@@ -7,7 +7,7 @@ Fork this repo, submit a pull-request answering the chanllenge and **get some sw
 
 Here at [Joola](https://joo.la) we developed a cool [framework](http://github.com/joola/joola) for data analytics, but we want to learn more about how we can make it even better and more accessible for developers, this is why we came up with this challenge. 
 
-We're interested in the different methods and concepts you would use to tackle a very basic challenge, drawing a line-chart.
+We're interested in the different methods and concepts **you would use** to tackle a very basic challenge, drawing a line-chart.
 
 **We will send out T-shirts** to leading pull-requests and raffle more among all pull-requests submitted.
 
