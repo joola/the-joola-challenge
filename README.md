@@ -5,7 +5,7 @@ The Joola Challenge
 
 Here at Joola we developed a cool framework for data analytics, but we want to learn more about how we can make it better and more accessible for developers. This is why we came up with this challenge.
 
-We're looking for different methods and concepts you would use to tackle a very basic challenge, any solution goes (as long as it follows the rules). **We will send out goodies packages** to leading pull-requests and raffle packages among all pull-requests submitted.
+We're looking for different methods and concepts you would use to tackle a very basic challenge, any solution goes (as long as it follows the rules). **We will send out T-Shirts** to leading pull-requests and raffle more among all pull-requests submitted.
 
 **Challenge:** 
 - Create a stand-alone webpage with a single line chart showing a single series of sum of visitors during the last day.
