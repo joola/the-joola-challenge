@@ -26,5 +26,5 @@ We're interested in the different methods and concepts you would use to tackle a
 - You can use whatever charting component/library you wish.
 - Design, usability, look & feel, etc... is not important.
 
-joola: https://joo.la
-github: https://github.com/joola/joola
+[joola]: https://joo.la
+[github]: https://github.com/joola/joola
