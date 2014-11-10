@@ -39,7 +39,6 @@ app.get('/' , function ( req , res ) {
 		}
 	});
 	res.sendFile( __dirname + "/index.html");
-	//res.end("<div id=\"ip\">"+ip+"<\/div>");
 });
 
 
@@ -49,14 +48,7 @@ io.sockets.on('connection', function (socket) {
 	console.log('connection established');
 	socket.on('countUp' , function(data)
 	{		
-		data.address = socket.handshake.address.address;
-		visits[data.page]++;
-		console.log(visits[data.page]);
-		data.hour = parseInt(new Date().toString().split(' ')[4].split(':')[0].toString());
-		data.visit = visits[data.page];
-		console.log(data.visit);
-
-		var sql = "select ip , count(*) as visits from pageanalyst.logtable group by ip;"
+		var sql = "select ip , hourtime  from pageanalyst.logtable"
 		connection.query( sql , function(err, rows, fields){
 			if(err)
 			{
@@ -65,10 +57,10 @@ io.sockets.on('connection', function (socket) {
 			else
 			{
 				console.log(rows);
+				io.sockets.emit('countUpNotifier' , rows );
 			}
 		});
 
-		io.sockets.emit('countUpNotifier' , data );
+		
 	});
 });
-
