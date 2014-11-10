@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>Analystics Page</title>
+	<link rel="stylesheet" type="text/css" href="/index.css">
+	<script src="/Chart.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div style="width:30%">
+		<div>
+			<canvas id="canvas" height="800" width="800"></canvas>
+		</div>
+	</div>	
+	<h3> Y-axis = Number of visits <br/>
+	     X-axis = Time Intervals <br/>
+	     Note that each line represents a unique user and their statistics </h3>
+
+    <script>
+
+     var socket = io.connect('http://localhost:8080/');
+     socket.emit("countUp" , {page : "index" });
+     socket.on('countUpNotifier' , function(mydata){
+
+     	    //ip list 
+     		var ipArray = new Array();
+     	    for(var i=0 ; i < mydata.length ; i++)
+     	    {
+     	    	if(ipArray.indexOf(mydata[i].ip) == -1 )
+     	    		ipArray.push(mydata[i].ip);
+     	    }
+
+     	    //getting temp result 
+     	    res = [] ;
+			for(var j=0 ; j < ipArray.length ; j++ )
+			{
+			  htime = new Object();
+			  htime.ip = ipArray[j];
+			  for(var i = 0 ; i < mydata.length ; i++)
+			  {
+			      
+			      if( ipArray[j] === mydata[i].ip )
+			      {
+			         if(htime[mydata[i].hourtime]=== undefined ) 
+			            htime[mydata[i].hourtime] = 1 ;
+			         else
+			           htime[mydata[i].hourtime]++;
+			      }
+			  } 
+			  htime.dataArr = new Array();
+			  for (var i = 0; i <= 24; i++) {
+			    htime.dataArr[i] = 0 ;
+			  }
+			  res.push(htime);
+			}
+
+			//formatting the  data array 
+			for(var i = 0 ; i < res.length ; i++) 
+			{
+			    for(var j = 0 ; j < 25 ; j++)
+			    { 
+			        if( res[i][j.toString()] !== undefined ) 
+			               res[i].dataArr[j] = res[i][j.toString()];
+			    } 
+			}
+
+			//getting the final Array 
+			finalRes = [];
+			for(var i = 0 ; i < res.length ; i++ ) 
+	        { 
+	        	finalRes.push({
+	        	 label : res[i].ip ,
+				 fillColor: "rgba(151,187,205,0.2)",
+            	 strokeColor: "rgba(151,187,205,1)",
+            	 pointColor: "rgba(151,187,205,1)",
+            	 pointStrokeColor: "#fff",
+            	 pointHighlightFill: "#fff",
+            	 pointHighlightStroke: "rgba(151,187,205,1)",
+	        	 data : res[i].dataArr }); 
+	        }
+
+	   	    var hrArr = new Array(); 
+	 	    for(var i = 0 ; i <=24 ; i++ )
+	 	    {
+	 	    	hrArr.push(i.toString());
+	 	    }
+
+
+	 	    var lineChartData = {
+					labels : hrArr , 
+					datasets : finalRes
+			};
+
+			//redraw with new datasets 
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myLine = new Chart(ctx).Line(lineChartData, {
+				responsive: true
+			});
+
+     });
+	</script>
+</body>
+</html>
