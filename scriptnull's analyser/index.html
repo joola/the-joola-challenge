@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Analystics Page</title>
+	<link rel="stylesheet" type="text/css" href="/index.css">
+	<script src="/Chart.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div style="width:30%">
+		<div>
+			<canvas id="canvas" height="450" width="600"></canvas>
+		</div>
+	</div>	
+
+
+    <script>
+ 	    
+ 	    var hrArr = new Array(); 
+ 	    for(var i = 0 ; i <=24 ; i++ )
+ 	    {
+ 	    	hrArr.push(i.toString());
+ 	    }
+
+ 	    var dataArr = new Array();
+ 	    for (var i = 0; i < 24; i++) {
+ 	    	dataArr[i] = 0 ;
+ 	    }
+
+ 	    var lineChartData = {
+			labels : hrArr , 
+			datasets : [
+				{
+					label: "My First dataset",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : dataArr
+				}
+			]
+		};
+
+		window.onload = function(){
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myLine = new Chart(ctx).Line(lineChartData, {
+				responsive: true
+			});
+		}
+
+
+
+     var socket = io.connect('http://localhost:8080/');
+     socket.emit("countUp" , {page : "index" });
+     socket.on('countUpNotifier' , function(mydata){
+     	    dataArr[mydata.hour] = mydata.visit;
+     	    window.myLine.datasets[0].points[mydata.hour].value = mydata.visit;
+     	    window.myLine.update();
+     	    console.log(mydata);
+     });
+	</script>
+</body>
+</html>
