@@ -1,0 +1,8 @@
+{
+  "name": "joola-test",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.3.0",
+    "chartjs": "1.0.1-beta.4"
+  }
+}

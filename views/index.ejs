@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Joola Challenge</title>
+        <meta name="description" content="Submission for the joola challenge">
+        <meta name="author" content="Daniel Kopitchinski">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/core.css">
+
+        <style>
+
+        	input:focus,
+			select:focus,
+			textarea:focus,
+			button:focus {
+			    outline: none !important;
+			}
+
+        	#allPosts {
+			    resize: none;
+			    font-size: 12px;
+			    border-radius: 5px;
+			    border: #ccc solid 1px;
+			    line-height: 14px;
+			    height:100px;
+			    overflow: scroll;
+			}
+
+			p{
+		    	margin:0;
+		    	padding:0;
+		    }
+
+		</style>
+    </head>
+    <body>
+
+	<!--[if lt IE 8]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+    <div class="container">
+    	<div class="jumbotron">
+        	<h1>Joola Challenge</h1>
+       		<p>How many page views have we had over the past 24 hours?</p>
+       		<div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+       		</div>
+            By Daniel Kopitchinski
+		</div>
+	</div>
+
+    <!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="public/bower_components/jQuery/jquery.min.js"><\/script>')</script>
+    <script src="bower_components/chartjs/chart.js"></script>
+    <!-- socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+	<!-- APP CODE -->
+	<script src="js/app.js"></script>
+    </body>
+</html>
