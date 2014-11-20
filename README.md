@@ -1,3 +1,5 @@
+select sum(count) from visits group by time(1h) where time > now() - 7d
+
 The Joola Challenge
 ===================
 
