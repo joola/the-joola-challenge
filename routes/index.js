@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 router.get('/visits', function(req, res) {
   var query = 'SELECT SUM(count) FROM visits GROUP BY time(1h) fill(0) WHERE time > now() - 1d';
   influx.query(query, function(err, visits) {
-    res.json(200, visits[0]);
+    res.status(200).json(visits[0]);
   })
 })
 
