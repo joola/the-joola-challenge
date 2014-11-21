@@ -5,7 +5,7 @@
   sudo: yes
 
 - name: clone repo
-  git: repo=https://github.com/shaharke/the-joola-challenge.git accept_hostkey=yes dest={{ project_dir }} version=challenged-accepted
+  git: repo=https://github.com/shaharke/the-joola-challenge.git accept_hostkey=yes dest={{ project_dir }} version=challenge-accepted
 
 - name: install node dependencies
   npm: path={{ project_dir }} production=yes
