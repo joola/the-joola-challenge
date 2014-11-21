@@ -8,8 +8,13 @@ joola.controller('VisitsCtrl', ['$scope', '$http', function($scope, $http) {
       y: {type: 'linear', min: 0, ticks: 5}
     },
     series: [
-      {y: 'value', color: 'steelblue', thickness: '2px', type: 'line', label: 'Number of Visitors'}
-    ]
+      {y: 'value', axis: "y", color: 'steelblue', thickness: '2px', type: 'line', label: '# Visits', drawDots: true}
+    ],
+    tooltip: {mode: "axes" },
+    lineMode: "linear",
+    tension: 0.7,
+    drawLegend: true,
+    tooltipMode: "dots"
   }
 
   $http.get('/visits').then(function(res) {
