@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - { role: common, tags: infra }
+    - { role: influx, tags: infra }
+    - { role: joola, tags: app }
+
+

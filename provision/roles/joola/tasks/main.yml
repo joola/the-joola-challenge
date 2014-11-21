@@ -1,0 +1,22 @@
+---
+
+- name: create /opt
+  file: path=/opt state=directory owner={{ ansible_ssh_user }}
+  sudo: yes
+
+- name: clone repo
+  git: repo=https://github.com/shaharke/the-joola-challenge.git accept_hostkey=yes dest={{ project_dir }} version=challenge-accepted
+
+- name: install node dependencies
+  npm: path={{ project_dir }} production=yes
+
+- name: install bower dependencies
+  shell: bower install chdir={{ project_dir }}
+
+- name: generate upstrat conf
+  template: src=joola.conf.j2 dest=/etc/init/joola.conf
+  sudo: yes
+
+- name: start server
+  service: name=joola state=restarted
+  sudo: yes

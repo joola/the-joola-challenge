@@ -1,0 +1,14 @@
+description "joola"
+
+start on started networking
+stop on shutdown
+
+chdir /opt/joola
+setuid {{ ansible_ssh_user }}
+setgid {{ ansible_ssh_user }}
+
+respawn
+
+script
+  exec npm start
+end script
