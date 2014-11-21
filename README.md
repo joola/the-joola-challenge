@@ -13,5 +13,6 @@ Demo is live here: http://54.67.67.171:4000/
 ## Local development
 
 * `git clone https://github.com/shaharke/the-joola-challenge.git -b challenge-accepted`
-* `cd vagrant && vagrant up`: setups InfluxDB instance (admin console at http://localhost:8083)
-* `cd .. && npm start`: run the server in the foreground on port 4000
+* `cd the-joola-challenge && vagrant && vagrant up`: setups InfluxDB instance (admin console at http://localhost:8083)
+* `cd .. && npm install && bower install`: installs server-side and client side dependencies
+* `npm start`: runs the server in the foreground on port 4000
