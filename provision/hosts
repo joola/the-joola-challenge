@@ -1,0 +1,1 @@
+joola ansible_ssh_host=54.67.67.171 ansible_ssh_user=ubuntu user=ubuntu

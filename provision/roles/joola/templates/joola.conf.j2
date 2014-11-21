@@ -4,8 +4,8 @@ start on started networking
 stop on shutdown
 
 chdir /opt/joola
-setuid vagrant
-setgid vagrant
+setuid {{ ansible_ssh_user }}
+setgid {{ ansible_ssh_user }}
 
 respawn
 
