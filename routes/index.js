@@ -1,20 +1,10 @@
 var express = require('express');
+var primus = require('../config/primus').primus
 var router = express.Router();
-var influx = require('../config/influx');
 
 router.get('/', function(req, res) {
-  var point = { count: 1 };
-  influx.writePoint('visits', point, {}, function() {
-    res.render('index', { title: 'Express' });
-  })
-
-});
-
-router.get('/visits', function(req, res) {
-  var query = 'SELECT SUM(count) FROM visits GROUP BY time(1h) fill(0) WHERE time > now() - 1d';
-  influx.query(query, function(err, visits) {
-    res.status(200).json(visits[0]);
-  })
+  res.render('index');
 })
+
 
 module.exports = router;
