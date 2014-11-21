@@ -3,7 +3,7 @@ module.exports = function(primus) {
 
   primus.on('connection', function() {
     var point = { count: 1 };
-    influx.writePoint('visits', point, {}, function() {
+    influx.writePoint('visits', point, {database: 'joola'}, function() {
       getVisits(primus.write.bind(primus));
     })
 
