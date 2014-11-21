@@ -1,0 +1,22 @@
+---
+
+- name: create /opt
+  file: path=/opt state=directory owner=vagrant
+  sudo: yes
+
+- name: clone repo
+  git: repo=https://github.com/shaharke/the-joola-challenge.git accept_hostkey=yes dest={{ project_dir }} version=shaharke
+
+- name: install node dependencies
+  npm: path={{ project_dir }} production=yes
+
+- name: install bower dependencies
+  shell: bower install chdir={{ project_dir }}
+
+- name: copy upstrat conf
+  command: cp {{ project_dir }}/upstart/joola.conf /etc/init
+  sudo: yes
+
+- name: start server
+  service: name=joola state=restarted
+  sudo: yes

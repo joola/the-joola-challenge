@@ -1,0 +1,13 @@
+---
+- name: setup nodejs repo
+  get_url: url=https://deb.nodesource.com/setup dest=/tmp/setup-nodejs-repo.sh
+
+- file: path=/tmp/setup-nodejs-repo.sh mode=0775
+
+- shell: /tmp/setup-nodejs-repo.sh
+  sudo: yes
+
+- name: install nodejs and npm
+  apt: name=nodejs update_cache=true
+  sudo: yes
+

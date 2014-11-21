@@ -12,7 +12,12 @@ module.exports = function(primus) {
   function getVisits(callback) {
     var query = 'SELECT SUM(count) FROM visits GROUP BY time(1h) fill(0) WHERE time > now() - 1d';
     influx.query(query, function(err, visits) {
-      callback(visits[0]);
+      if (visits) {
+        callback(visits[0]);
+      } else {
+        callback({});
+      }
+
     })
   }
 }

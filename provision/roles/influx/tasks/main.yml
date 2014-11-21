@@ -1,0 +1,10 @@
+- name: download influx deb
+  get_url: url="http://s3.amazonaws.com/influxdb/influxdb_latest_amd64.deb" dest="/tmp"
+
+- name: install influx
+  command: dpkg -i /tmp/influxdb_latest_amd64.deb
+  sudo: yes
+
+- name: restart influx
+  service: name=influxdb state=restarted
+  sudo: yes
